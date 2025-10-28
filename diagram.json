@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Ngo Phuoc Loc",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -120.1, "left": -341, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -153.3,
+      "left": -5.4,
+      "attrs": { "temperature": "79.9" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -184.49,
+      "left": -118.17,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -82.45,
+      "left": -172.8,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "dht1:VCC", "green", [ "h37.79", "v-0.43", "h209.39" ] ],
+    [ "esp:GND.1", "dht1:GND", "black", [ "h0" ] ],
+    [ "esp:D4", "dht1:SDA", "green", [ "h0" ] ],
+    [ "esp:GND.1", "r1:1", "black", [ "h0" ] ],
+    [ "r1:2", "led2:C", "green", [ "v0" ] ],
+    [ "led2:A", "esp:D23", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

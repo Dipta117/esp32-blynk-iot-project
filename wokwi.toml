@@ -1,0 +1,16 @@
+[wokwi]
+version = 1
+# Remove firmware and elf lines - let Wokwi auto-detect
+firmware = ".pio/build/esp32dev/firmware.bin"
+elf = ".pio/build/esp32dev/firmware.elf"
+
+[[parts]]
+type = "esp32"
+
+[[parts]]
+type = "dht22"
+connect = "D4"
+
+[[parts]]
+type = "led" 
+connect = "D23"
